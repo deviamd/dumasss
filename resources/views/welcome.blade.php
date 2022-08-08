@@ -23,7 +23,7 @@
               <a class="nav-link active" aria-current="page" href="#Home">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#dua">Cara mengadu!</a>
+              <a class="nav-link" href="#dua">Tata Cara</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#tiga">About</a>
@@ -44,7 +44,7 @@
                 @csrf
               </form>
               </li>
-                
+
               </ul>
             </li>
             @elsecan('user')
@@ -63,7 +63,7 @@
                 @csrf
               </form>
               </li>
-                
+
               </ul>
             </li>
             @else
@@ -71,7 +71,7 @@
                 <a class="btn btn-primary" href="{{ route('login') }}">Login</a>
             </li>
              @endcan
-           
+
             <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Login </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -90,7 +90,7 @@
           <div class="col-md-6 p-5">
             <h2 data-aos="fade-up" >Pengaduan <span>Masyarakat</span></h2>
             <p    data-aos="fade-up"  data-aos-delay="300">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem delectus, minima at rerum omnis saepe ex quos nemo, tempore temporibus molestiae ipsam incidunt, consequuntur culpa obcaecati commodi accusamus expedita neque.
+                Aplikasi yang memudahkan masyarakat dan membantu pemerintah untuk mengatasi segala permasalahan yang ada di lingkungan masyarakat. Agar Jakarta Timur menjadi maju dan dikenal di kalangan masyarakat!
             </p>
             <a href="{{ route('login') }}" class="btn btn-primary" data-aos="fade-up"  data-aos-delay="350">Get Started!</a>
           </div>
@@ -99,7 +99,7 @@
           </div>
         </div>
       </div>
-      
+
     </section>
 
     <section id="dua">
