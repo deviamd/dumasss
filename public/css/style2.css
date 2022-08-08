@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400&display=swap");
+
+:root {
+  --purple: #814096;
+  --pink: #f83292;
+  --gradient: linear-gradient(90deg, var(--purple), var(--pink));
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  
+  align-items: center;
+  justify-content: center;
+  background:url(/assets/imagess/images/home-bg-img.png) no-repeat;
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: 110vmax;
+}
+nav .logo {
+  font-size: 23px;
+  color: var(--purple);
+}
+nav .btn{
+
+margin-left: 10px;
+  padding: 10px 20px;
+  border-radius: 5rem;
+  background: var(--gradient);
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  
+  transition: all 0.3s linear;
+}
+
+nav .btn:hover {
+  transform: scale(1.1);
+}
+
+nav .logo span {
+  color: var(--pink);
+}
+.navbar a {
+  font-size: 18px;
+  margin-left: 10px;
+  color: white;
+  align-items: center;
+  align-content: center;
+}
+
+.navbar a:hover {
+  color: var(--pink);
+}
+nav .dropdown-item{
+    color: white;
+}
+#Home {
+  padding-top: 5rem;
+  
+}
+#Home h2{
+  font-size: 65px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color:#333;
+
+}
+#Home h2 span{
+  font-weight: 700;
+  color:var(--pink);
+  text-transform: uppercase;
+
+}
+#Home .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 16px 35px;
+  border-radius: 5rem;
+  background: var(--gradient);
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
+}
+
+#Home .btn:hover {
+  transform: scale(1.1);
+}
+#Home svg {
+  margin-top: -120px;
+}
+#dua .btn{
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 14px 32px;
+  border-radius: 5rem;
+  background: var(--gradient);
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
+}
+#dua .btn:hover {
+  transform: scale(1.1);
+}
+
+#tiga .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  border-radius: 2rem;
+  background: var(--gradient);
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transition: all 0.3s linear;
+}
+#tiga .btn:hover {
+  transform: scale(1.1);
+}
+#footer{
+  background-color: var(--pink);;
+}
