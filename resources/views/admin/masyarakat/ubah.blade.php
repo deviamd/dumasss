@@ -2,7 +2,7 @@
 @section('isi')
 
   <div class="container" style="position: relative;">
-    
+
     <form method="POST" action="{{ route('daftar-admin.update',$datas->id) }}" >
         @csrf
             <input type="hidden" name="_method" value="PATCH">
@@ -22,8 +22,8 @@
             <label for="formGroupExampleInput2">hp</label>
             <input type="text" class="form-control" id="formGroupExampleInput2" name="hp" value="{{ $datas->hp }}">
         </div>
-  
-        <button style="background-color: #FF9106; border: unset" type="submit" class="btn btn-primary mt-4">Ubah</button>
+
+        <button style="background-color: #E56717; border: unset" type="submit" class="btn btn-primary mt-4">Ubah</button>
     </form>
   </div>
 

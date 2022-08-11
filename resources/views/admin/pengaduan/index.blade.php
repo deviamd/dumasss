@@ -6,7 +6,7 @@
     <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
         aria-label="Search" aria-describedby="basic-addon2" name="cari" value="{{ request('cari') }}">
     <div class="input-group-append">
-        <button class="btn" style="background-color: #ff9106;" type="submit">
+        <button class="btn" style="background-color: #ab784e;" type="submit">
             <i class="fas fa-search fa-sm text-white"></i>
         </button>
     </div>
@@ -14,33 +14,33 @@
 </form>
 @endsection
 @section("button")
-<a href="{{ route('index-sudah.index') }}" class="d-none d-sm-inline-block btn btn-sm text-white  shadow-sm" style="background-color: #ff9106;">
+<a href="{{ route('index-sudah.index') }}" class="d-none d-sm-inline-block btn btn-sm text-white  shadow-sm" style="background-color: #954535;">
    Sudah di proses</a>
 @endsection
 @section('isi')
 <div class="container">
-    
+
     <h2 class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
         List Aduan
       </h2>
     <table class="table mt-3" cellpadding="10" cellspace="0">
         <thead class="align-self-center text-center">
             <th>Foto</th>
-       
+
             <th>Nama</th>
             <th>Tanggal</th>
             <th>Status</th>
             <th colspan="2">Action</th>
         </thead>
-       
-        @foreach ($pengaduan as $key) 
+
+        @foreach ($pengaduan as $key)
         @if ($key->status == "belum di proses")
         <tbody>
-            
+
             <tr class="align-self-center text-center" style="border: 1px solid black;">
                 <td data-label="images"><img src="/assets/images/bukti/{{ $key->image }}"
                     style="height: 100px; width: 150px;"></td>
-       
+
                 <td data-label="Name">{{ $key->name }}</td>
                 <td data-label="Tanggal">{{ $key->created_at }}</td>
                 <td data-label="Cost">
@@ -59,16 +59,16 @@
                           class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-md dark:bg-green-700 dark:text-green-100">
                           {{ $key->status }}
                         </span>
-                    @endif    
+                    @endif
                 </td>
                 <td class="text-center justify-content-center align-self-center ">
-                    
+
                     <form method="GET" action="{{ route('pengaduan.show', $key->id )}}">
                         <button class="btn btn-info" >lihat detail</button>
                     </form>
-                        
-                  
-                    
+
+
+
                 </td>
             </tr>
             @empty($key)
@@ -80,14 +80,14 @@
             @endempty
         </tbody>
         @else
-       
-          
+
+
         @endif
-        
+
         @endforeach
-       
+
 
     </table>
 </div>
-    
+
 @endsection

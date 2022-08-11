@@ -29,32 +29,32 @@
         * {
             box-sizing: border-box;
         }
-  
+
         .table {
             width: 100%;
             border-collapse: collapse;
         }
-  
+
         .table td,
         .table th {
             text-align: center;
         }
-  
+
         .table th {
-            background-color: #ff9106;
+            background-color: #e9967a;
             color: black;
         }
-  
+
         .table tbody:nth-child(even) {
             background-color: #f5f5f5;
         }
-  
+
         /* Ini Responsivenya */
         @media (max-width: 768px) {
             .table thead {
                 display: none;
             }
-  
+
             .table,
             .table tbody,
             .table tr,
@@ -62,16 +62,16 @@
                 display: block;
                 width: 100%;
             }
-  
+
             .table tr {
                 margin-bottom: 15px;
             }
-  
+
             .table td {
                 text-align: right;
                 position: relative;
             }
-  
+
             .table td::before {
                 content: attr(data-label);
                 position: absolute;
@@ -82,14 +82,14 @@
                 font-weight: bold;
                 text-align: left;
             }
-  
+
         }
-  
+
         @media (max-width: 500px) {
             .table thead {
                 display: none;
             }
-  
+
             .table,
             .table tbody,
             .table tr,
@@ -97,16 +97,16 @@
                 display: block;
                 width: 100%;
             }
-  
+
             .table tr {
                 margin-bottom: 15px;
             }
-  
+
             .table td {
                 text-align: right;
                 position: relative;
             }
-  
+
             .table td::before {
                 content: attr(data-label);
                 position: absolute;
@@ -117,63 +117,63 @@
                 font-weight: bold;
                 text-align: left;
             }
-  
+
         }
-  
+
         /* End Responsive */
-  
+
         .title {
             color: #adadad;
             text-align: center;
-  
+
         }
-  
+
         .subtitle a {
-            color: white;
+            color: #251D3A;
             text-decoration: none;
             float: left;
             padding-top: 1px;
         }
-  
+
         .subtitle a:hover {
             color: #dbd7e6;
             text-decoration: none;
-  
+
         }
-  
+
         .form-control {
-            
+
         }
-  
+
         @media (max-width: 500px) {
             .subtitle a {
                 font-size: 15px;
                 padding-top: 3px;
             }
-  
+
             .form-control {
-              
+
             }
         }
-        
+
         @media (max-width: 768px) {
             .subtitle a {
                 padding-top: 1px;
             }
-            
+
             .form-control {
-              
+
             }
         }
-  
+
         .btn {
-            background-color: #ff9106;
-            color: white
+            background-color: #f87431;
+            color: #251D3A;
         }
-   
-        body{ margin:0; } canvas{ display: block; vertical-align: bottom; } 
-        /* ---- particles.js container ---- */ 
-        #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #ffffff; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #0078AA; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
+
+        body{ margin:0; } canvas{ display: block; vertical-align: bottom; }
+        /* ---- particles.js container ---- */
+        #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #ffffffo; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #0078AA; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
       </style>
       <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </head>
@@ -185,10 +185,10 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #ff9106; color: black;">
+        <ul class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #4e5180; color: #dc143c;">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/" style="color: black;">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/" style="color: white;">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -199,7 +199,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            
+
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
@@ -221,17 +221,17 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/admin/daftar-admin">
-                    
+
                     <i class="bi bi-person-fill"></i>
                     <span>Admin</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/admin/laporan">
-                    
+
                     <i class="bi bi-check-square-fill"></i>
                 <i class="ri-dashboard-line"></i><span class="badge rounded-pill bg-warning float-end">{{ $success }}</span>
                     <span>Laporan Harian</span></a>
-                    
+
             </li>
 
 
@@ -243,7 +243,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-            
+
 
         </ul>
         <!-- End of Sidebar -->
@@ -293,10 +293,10 @@
                         </li>
 
                         <!-- Nav Item - Alerts -->
-                        
+
 
                         <!-- Nav Item - Messages -->
-                       
+
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -308,13 +308,13 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                
-                                
+
+
                                 <a class="dropdown-item" href="/" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                   Home
                                 </a>
-                               
+
                             </div>
                         </li>
 
@@ -324,7 +324,7 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-  
+
                 <div class="container">
 
                     <!-- Page Heading -->
@@ -335,20 +335,20 @@
 
                     <div class="table-responsive">
                      @yield("isi")
-               
+
                    </div>
-                  
-                  
-                   @yield("isi2")     
+
+
+                   @yield("isi2")
 
         </div>
-        
-           
-        
+
+
+
         <!-- End of Content Wrapper -->
-     
+
     </div>
- 
+
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
@@ -382,7 +382,7 @@
             </div>
         </div>
     </div>
-    
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
