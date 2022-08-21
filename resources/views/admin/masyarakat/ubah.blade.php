@@ -3,7 +3,7 @@
 
   <div class="container" style="position: relative;">
 
-    <form method="POST" action="{{ route('daftar-admin.update',$datas->id) }}" >
+    <form method="POST" action="{{ route('daftar-masyarakat.update',$datas->id) }}" >
         @csrf
             <input type="hidden" name="_method" value="PATCH">
         <div class="form-group">
@@ -22,7 +22,14 @@
             <label for="formGroupExampleInput2">hp</label>
             <input type="text" class="form-control" id="formGroupExampleInput2" name="hp" value="{{ $datas->hp }}">
         </div>
+        <label for="formFile" class="form-label">Ubah level</label>
+            <select class="form-select" aria-label="Default select example" name="opsi" required>
 
+              <option value="USER">User</option>
+              <option value="ADMIN">Admin</option>
+
+            </select>
+            
         <button style="background-color: #E56717; border: unset" type="submit" class="btn btn-primary mt-4">Ubah</button>
     </form>
   </div>

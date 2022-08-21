@@ -29,7 +29,7 @@ class pengaduanadminController extends Controller
             'pending' => pengaduan::where('status', 'belum di Proses')->count(),
             'success' => pengaduan::where('status', 'sudah di proses')->count(),
         ]);
-       
+
     }
 
     /**
@@ -39,7 +39,7 @@ class pengaduanadminController extends Controller
      */
     public function create()
     {
-       
+
     }
 
     /**
@@ -70,20 +70,18 @@ class pengaduanadminController extends Controller
         ->get();
         $pengaduan =  DB::table('tanggapans')
         ->where('pengaduanID', '=', $id)
-        
+
         ->get();
-        // return view('admin.pengaduan.detail', compact('datas','item','pengaduan'),[
-        //     'pending' => pengaduan::where('status', 'Belum di Proses')->count(),
-        // ]);
+        
         return view('admin.pengaduan.detail', [
             'pengaduan' => $pengaduan,
             'datas' => $datas,
             'item' => $item,
             'success' => pengaduan::where('status', 'sudah di proses')->count(),
             'pending' => pengaduan::where('status', 'belum di Proses')->count(),
-           
+
         ]);
-        
+
     }
 
     /**

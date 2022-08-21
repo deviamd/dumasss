@@ -197,7 +197,15 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
-
+            <div class="user-profile text-center mt-3">
+                {{-- <div class="row">
+                    <img src="/assets/avatar-7.jpg" alt="" class="avatar-md rounded-circle justify-content-center text-center align-content-center" style="width: 120px; margin-left: 64px;">
+                </div> --}}
+                <div class="mt-3">
+                    <h5 class="font-size-13 mb-1">{{ Auth::user()->name }}</h5>
+                    <span class="text-success"><i class="bi bi-person-circle"></i> {{ Auth::user()->level }}</span>
+                </div>
+            </div>
             <!-- Nav Item - Dashboard -->
 
 

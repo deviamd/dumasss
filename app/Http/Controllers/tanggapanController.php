@@ -16,10 +16,10 @@ class tanggapanController extends Controller
      */
     public function index()
     {
-        return view('admin.tanggapan.index',[
-            'pending' => pengaduan::where('status', 'belum di Proses')->count(),
-            'success' => pengaduan::where('status', 'sudah di proses')->count(),
-        ]);
+        //return view('admin.tanggapan.index',[
+        //   'pending' => pengaduan::where('status', 'belum di Proses')->count(),
+        //   'success' => pengaduan::where('status', 'sudah di proses')->count(),
+        // ]);
     }
 
     /**
@@ -41,28 +41,32 @@ class tanggapanController extends Controller
     public function store(Request $request)
     {
         DB::table('pengaduans')->where('id', $request->id)->update([
-            'status'=> $request->opsi
+            'status'=> $request->opsi,
+            'update'=> $request->tgl,
+            'created_at'=> $request->tgl,
         ]);
         $datas = DB::table('tanggapans')->get();
-       
+
         DB::table('tanggapans')->where('pengaduanID', $request->id)->update([
-           
+
             'tanggapan' => $request->laporan,
+            'update'=> $request->tgl
         ]);
 
         $model = new tanggapan;
         $model->pengaduanID = $request->id;
         $model->tanggapan = $request->laporan;
+        $model->update = $request->tgl;
         $model->save();
-        
-    
 
-           
 
-       
-       
 
-       
+
+
+
+
+
+
         toastr()->success('Berhasil di tanggapi!', 'Selamat');
         return redirect('admin/pengaduan');
     }
@@ -75,10 +79,11 @@ class tanggapanController extends Controller
      */
     public function show(Request $request ,$id)
     {
+        $tanggapan =  DB::table('tanggapans')->get();
         $datas = pengaduan::with([
-            'details'
+            'details','tanggapans'
         ])->findorFail($id);
-        return view('admin.tanggapan.index', compact('datas'),[
+        return view('admin.tanggapan.index', compact('datas','tanggapan'),[
             'pending' => pengaduan::where('status', 'belum di Proses')->count(),
             'success' => pengaduan::where('status', 'sudah di proses')->count(),
         ]);
@@ -105,13 +110,24 @@ class tanggapanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $model = tanggapan::find($id);
-        $model->tanggapan = $request->laporan;
-      
-        
-        
-        $model->save();
+       // $model = tanggapan::find($id);
+       // $model->tanggapan = $request->laporan;
+       // $model->update = $request->tgl;
 
+
+
+       //$model->save();
+       DB::table('pengaduans')->where('id', $request->id)->update([
+        'status'=> $request->opsi,
+        'update'=> $request->tgl,
+        'created_at'=> $request->tgl,
+    ]);
+    DB::table('tanggapans')->where('pengaduanID', $request->id)->update([
+
+        'tanggapan' => $request->laporan,
+        'update'=> $request->tgl
+    ]);
+    toastr()->success('Berhasil di tanggapi!', 'Selamat');
         return redirect('admin/index-sudah');
     }
 

@@ -15,9 +15,12 @@ class CreateTanggapansTable extends Migration
     {
         Schema::create('tanggapans', function (Blueprint $table) {
             $table->id();
-            $table->integer('pengaduanID')->nullable();
+            $table->unsignedBiginteger('pengaduanID')->nullable();
             $table->string('tanggapan');
             $table->timestamps();
+            $table->date('update')->nullable();
+
+            $table->foreign('pengaduanID')->references('id')->on('pengaduans');
         });
     }
 

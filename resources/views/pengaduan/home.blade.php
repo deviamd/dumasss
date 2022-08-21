@@ -11,21 +11,29 @@ $tanggal = date("Y-m-d");
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        body{ margin:0; } canvas{ display: block; vertical-align: bottom; }
+
+        body{ margin:0; background-color: #2B4865;} canvas{ display: block; vertical-align: bottom; }
         /* ---- particles.js container ---- */
         #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #ffffff; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #0078AA; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
       </style>
     <title>Dumas | Form Pengaduan</title>
     <style>
-      nav {
-        /* background-image: linear-gradient(90deg,#814096, #f83292); */
+      .navbar {
+        background-color: #2B4865;
         color: white;
+        padding-bottom: 20px;
+      }
+      .nav-link{
+        color: white;
+      }
+      .container label{
+       color: white;
       }
     </style>
   </head>
   <body>
      @include('sweetalert::alert')
-    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <a class="navbar-brand" href="#">Dumas</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +43,7 @@ $tanggal = date("Y-m-d");
             <ul class="navbar-nav ms-auto">
 
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Selamat Datang,{{ Auth::user()->name }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -62,7 +70,7 @@ $tanggal = date("Y-m-d");
       <div class="container" style="position: relative;">
         <form action="{{ url('pengaduan/home') }}" method="POST" enctype="multipart/form-data">
             @csrf
-        <div class="row">
+        <div class="row shadow-md dark:bg-gray-800">">
 
                 <input class="form-control" type="hidden" name="id" value="{{ Auth::user()->id }}"  id="formFile">
                 <input class="form-control" type="hidden" name="name" value="{{ Auth::user()->name }}"  id="formFile">
@@ -94,7 +102,7 @@ $tanggal = date("Y-m-d");
                 <div class="row">
                   <div class="col">
                     <label for="exampleFormControlTextarea1" class="form-label">Keluhan</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" name="pengaduan" rows="3"></textarea>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="pengaduan"></textarea>
                   </div>
                 </div>
 
@@ -110,10 +118,17 @@ $tanggal = date("Y-m-d");
           </div>
 
         </div>
-        <button type="submit" class="btn btn-primary mt-4">Kirim</button>
+        <button type="submit" class="btn btn-primary mt-4" style="background-color: #256D85;
+        color: white">Kirim</button>
         <button type="reset" class="btn btn-danger mt-4">Reset Pengaduan</button>
     </form>
+    <div class="row mt-5">
+        <div class="col justify-content-center text-center align-items-center">
+          <a href="{{ route('tanggapanuser.index' )}}" class="btn btn-primary" style="background-color: #256D85;
+          color: white; padding: 20px;">Aduan Anda </a>
+        </div>
       </div>
+          </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 

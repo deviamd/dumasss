@@ -15,12 +15,15 @@ class CreatePengaduansTable extends Migration
     {
         Schema::create('pengaduans', function (Blueprint $table) {
             $table->id();
-            $table->integer('userID')->nullable();
+            $table->unsignedBigInteger('userID');
             $table->string('name');
             $table->string('laporan');
             $table->string('image')->nullable();
             $table->string('status');
+            $table->date('update')->nullable();
             $table->timestamps();
+
+            $table->foreign('userID')->references('id')->on('users');
         });
     }
 

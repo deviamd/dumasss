@@ -15,7 +15,7 @@
 @endsection
 @section("button")
 <a href="{{ route('pengaduan.index') }}" class="d-none d-sm-inline-block btn btn-sm text-white  shadow-sm" style="background-color: #ff9106;">
-   Belum di proses</a>
+   Sedang di proses</a>
 @endsection
 @section('isi')
 <div class="container">
@@ -36,6 +36,7 @@
         @foreach ($pengaduan as $key)
         @if ($key->status == "sedang di proses")
         <tbody>
+
             <tr class="align-self-center text-center" style="border: 1px solid black;">
                 <td data-label="images"><img src="/assets/images/bukti/{{ $key->image }}"
                     style="height: 100px; width: 150px;"></td>
@@ -79,6 +80,7 @@
             @endempty
         </tbody>
         @else
+
 
         @endif
 

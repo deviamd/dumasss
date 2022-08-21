@@ -31,6 +31,7 @@
             <th>Nama</th>
             <th>Email</th>
             <th>No-Hp</th>
+            <th>Action </th>
 
         </thead>
 
@@ -42,7 +43,15 @@
                 <td data-label="">{{ $key->name }}</td>
                 <td data-label="">{{ $key->email }}</td>
                 <td data-label="">{{ $key->hp }}</td>
+                <td class="text-center justify-content-center align-self-center d-flex">
 
+                    <a class="btn btn-info" href="{{ route('daftar-masyarakat.edit',$key->id)}}">Ubah</a>
+                    <form action="{{ url('admin/daftar-masyarakat/'.$key->id) }}" method="POST" >
+                        @csrf
+                        <input type="hidden" name="_method" value="DELETE">
+                        <button type="submit" class="btn btn-danger ms-2">Delete</button>
+                    </form>
+                </td>
 
             </tr>
         </tbody>

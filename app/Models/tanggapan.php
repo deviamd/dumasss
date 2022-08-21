@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class tanggapan extends Model
 {
+    protected $fillable = ['pengaduanID', 'tanggapan','update'];
     use HasFactory;
     public function pengaduan()
     {

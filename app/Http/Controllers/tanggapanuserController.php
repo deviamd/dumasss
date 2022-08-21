@@ -8,20 +8,23 @@ use Illuminate\Support\Facades\DB;
 use Hashids\Hashids;
 use Auth;
 
-class pengaduanController extends Controller
+class tanggapanuserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $datas = DB::table('pengaduans')->where('UserID', '=',  Auth::user()->id)->get();
 
-        return view('pengaduan.home');
-    }
+        return view('pengaduan.tanggapanuser',[
+            'datas' => $datas,
+        ]);
+}
 
-    /**
+     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -39,29 +42,7 @@ class pengaduanController extends Controller
      */
     public function store(Request $request)
     {
-        $model = new pengaduan;
 
-
-        $model->userID = $request->id;
-        $model->laporan = $request->pengaduan;
-        $model->name = $request->name;
-        $model->image = $request->image;
-        $model->status = $request->status;
-        $model->created_at = $request->tgl;
-        // if ($request->hasFile('image')) {
-        //     $imageName = rand(11111, 99999) . '.' . $request->file('image')->getClientOriginalExtension();
-        //     $destinationPath = 'assets/images/bukti';
-        //     $upload_success = $request->file('image')->move($destinationPath, $imageName);
-        // }
-        if ($image = $request->file('image')) {
-            $destinationPath = 'assets/images/bukti';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $model['image'] = "$profileImage";
-        }
-        $model->save();
-        toastr()->success('Berhasil di tambah!', 'Terima kasih pengaduan sudah di terima');
-        return redirect('pengaduan/home');
     }
 
     /**
@@ -70,9 +51,24 @@ class pengaduanController extends Controller
      * @param  \App\Models\pengaduan  $pengaduan
      * @return \Illuminate\Http\Response
      */
-    public function show(pengaduan $pengaduan)
+    public function show(Request $request, $id)
     {
-        
+        $item = pengaduan::with([
+            'details','user','tanggapans'
+       ])->findOrFail($id);
+       $datas = DB::table('pengaduans')
+       ->where('id', '=', $id)
+       ->get();
+       $pengaduan =  DB::table('tanggapans')
+       ->where('pengaduanID', '=', $id)
+       ->groupBy('update')
+       ->get();
+
+       return view('pengaduan.detail', compact('pengaduan'), [
+           'pengaduan' => $pengaduan,
+           'datas' => $datas,
+           'item' => $item,
+       ]);
     }
 
     /**

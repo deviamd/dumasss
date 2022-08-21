@@ -17,13 +17,13 @@ class daftaradminController extends Controller
     {
         $cari = $request->cari;
         $datas =  DB::table('users')->where('level', '=', 'ADMIN')->where('name','like',"%".$cari."%")->get();
-       
+
         return view('admin.admin.index', [
             'datas' => $datas,
             'pending' => pengaduan::where('status', 'belum di Proses')->count(),
             'success' => pengaduan::where('status', 'sudah di proses')->count(),
         ]);
-       
+
     }
 
     /**
@@ -57,7 +57,7 @@ class daftaradminController extends Controller
         $model->hp = $request->hp;
         $model->level = $request->level;
         $model->password = $encrypted_password;
-        
+
         $model->save();
         toastr()->success('Berhasil di buat!', 'Sukses');
         return redirect('admin/daftar-admin');
@@ -103,8 +103,9 @@ class daftaradminController extends Controller
         $model->name = $request->name;
         $model->email = $request->email;
         $model->hp = $request->hp;
-        
-        
+        $model->level = $request->opsi;
+
+
         $model->save();
         toastr()->success('Berhasil di terupdate!', 'Sukses');
         return redirect('admin/daftar-admin');

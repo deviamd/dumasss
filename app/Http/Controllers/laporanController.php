@@ -20,7 +20,7 @@ class laporanController extends Controller
         ->join('pengaduans', 'pengaduans.userID', '=', 'users.id')
         ->orderBy('pengaduans.created_at','ASC')
         ->get();
-      
+
         return view('admin.laporan.index', [
             'pengaduan' => $pengaduan,
             'datas' => $datas,
@@ -37,17 +37,18 @@ class laporanController extends Controller
             'success' => pengaduan::where('status', 'sudah di proses')->count(),
             'pending' => pengaduan::where('status', 'belum di Proses')->count(),
         ]);
-       
+
     }
     public function pdf(Request $request ){
          $tgl = $request->tgl;
     $success = pengaduan::where('status', 'sudah di proses')->count();
     $pending = pengaduan::where('status', 'belum di Proses')->count();
     $pengaduan = pengaduan::where('created_at', '=', $tgl)->get();
-   
+
     $pdf = PDF::loadview('admin.laporan.pdf', compact('pengaduan','pending','success')) ;
     return $pdf->download('laporan.pdf');
-     
+
+
 
     }
 }
