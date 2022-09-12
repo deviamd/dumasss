@@ -1661,8 +1661,10 @@
           </div>
           <div class="col-md-6 p-5" >
             <p data-aos="fade-up"  data-aos-delay="300">
-             Pengaduan Masyarakat (Dumas) merupakan sebuah aplikasi yang menghubungkan masyarakat dengan pemerintah untuk menangani masalah yang ada di lingkungan masyarakat Jakarta Timur. Dengan adanya, aplikasi ini terbangunnya sistem informasi pengaduan keluahan masyarakat yang efisien dan efektif serta user friendly sehingga dapat mempermudah pengguna dalam mengelola keluhan,menindaklanjuti pengaduan masyarakat secara cepat dan tepat, menyengkirkan penyimpangan-penyimpangan yang timbul dalam masyarakat, serta memberdayakan masyarakat untuk berperan aktif dalam membantu meningkatkan pelayanan publik. Dampak positif aplikasi Pengaduan Masyarakat (Dumas) adalah : Masyarakat Jakarta Timur lebih terpantau oleh pemerintah, Lingkungan Jakarta Timur menjadi lebih tertata, aman, tentram, dan sejahtera. Aplikasi E-Dumas diciptakan berdasarkan Peraturan Presiden Nomor 76 Tahun 2013 tentang Pengelolaan Pengaduan Pelayanan Publik dan Peraturan lainnya sesuai dengan di masing-masing Kementerian dan Pemerintah Daerah.
-            </p>
+             Pengaduan Masyarakat (Dumas) merupakan sebuah aplikasi yang menghubungkan masyarakat dengan pemerintah untuk menangani masalah yang ada di lingkungan masyarakat Jakarta Timur. Dengan adanya, aplikasi ini terbangunnya sistem informasi pengaduan keluahan masyarakat yang efisien dan efektif serta user friendly sehingga dapat mempermudah pengguna dalam mengelola keluhan,menindaklanjuti pengaduan masyarakat secara cepat dan tepat, menyengkirkan penyimpangan-penyimpangan yang timbul dalam masyarakat, serta memberdayakan masyarakat untuk berperan aktif dalam membantu meningkatkan pelayanan publik.</p>
+
+             <p><br>Dampak positif aplikasi Pengaduan Masyarakat (Dumas) adalah : Masyarakat Jakarta Timur lebih terpantau oleh pemerintah, Lingkungan Jakarta Timur menjadi lebih tertata, aman, tentram, dan sejahtera. Aplikasi E-Dumas diciptakan berdasarkan Peraturan Presiden Nomor 76 Tahun 2013 tentang Pengelolaan Pengaduan Pelayanan Publik dan Peraturan lainnya sesuai dengan di masing-masing Kementerian dan Pemerintah Daerah.</p>
+
             <div class="row" >
               <div class="col-sm-4"data-aos="fade-up"  data-aos-delay="400">
                 <a href="{{ route('login') }}" class="btn btn-primary">Get Started</a>
